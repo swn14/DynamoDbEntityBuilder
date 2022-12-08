@@ -1,0 +1,16 @@
+<input type="text" [(ngModel)]="model.rootNamespace" />
+<input type="text" [(ngModel)]="model.domainNamespace" />
+<button (click)="generateEntity()">Submit</button>
+
+<div *ngIf="pk && sk">
+  <table border="1" cellpadding="10">
+    <tr>
+      <th>Partition Key</th>
+      <th>Sort Key</th>
+    </tr>
+    <tr>
+      <td>{{ pk }}</td>
+      <td>{{ sk }}</td>
+    </tr>
+  </table>
+</div>
