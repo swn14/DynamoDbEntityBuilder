@@ -1,8 +1,18 @@
-<input type="text" [(ngModel)]="model.rootNamespace" />
-<input type="text" [(ngModel)]="model.domainNamespace" />
+<div>
+  <label>Partition Key Namespace</label>
+  <div>
+    <input type="text" [(ngModel)]="model.globalNamespace" />
+  </div>
+</div>
+<div>
+  <label>Sort Key Namespace</label>
+  <div>
+    <input type="text" [(ngModel)]="model.domainNamespace" />
+  </div>
+</div>
 <button (click)="generateEntity()">Submit</button>
 
-<div *ngIf="pk && sk">
+<div *ngIf="formSubmitted">
   <table border="1" cellpadding="10">
     <tr>
       <th>Partition Key</th>
@@ -13,4 +23,10 @@
       <td>{{ sk }}</td>
     </tr>
   </table>
+
+  <pre>
+    <code>
+      {{ cSharpModel }}
+    </code>
+  </pre>
 </div>
